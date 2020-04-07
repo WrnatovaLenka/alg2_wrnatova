@@ -9,9 +9,13 @@ import java.util.ArrayList;
 public abstract class Client {
     //data
     private String name;
-    private ArrayList<Account> accounts;
+    private ArrayList<Account> accounts = new ArrayList();
 
-    
+    //konstruktor
+    public Client(String name) {
+        this.name = name;
+    }
+
     //metody
     public String getName(){
         return name;

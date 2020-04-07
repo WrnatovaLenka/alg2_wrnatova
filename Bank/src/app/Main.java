@@ -1,10 +1,10 @@
-package bank;
+package app;
 
 /**
  *
  * @author lenka.wrnatova
  */
-public class Bank {
+public class Main {
 
     /**
      * @param args the command line arguments

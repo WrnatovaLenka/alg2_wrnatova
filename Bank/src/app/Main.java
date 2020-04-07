@@ -28,10 +28,6 @@ public class Main {
 
         displayClients();
 
-//for (Client client : clients) {
-//            System.out.println(client);
-//        }
-
     }
 
     /**

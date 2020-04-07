@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author lenka.wrnatova
  */
 public abstract class Client {
+
     //data
     private String name;
     private ArrayList<Account> accounts = new ArrayList();
@@ -17,42 +18,41 @@ public abstract class Client {
     }
 
     //metody
-    public String getName(){
+    public String getName() {
         return name;
     }
-    
+
     public ArrayList<Account> getAccounts() {
         return accounts;
     }
 
     /**
      * prida klientovi novy ucet
-     * @param amount 
+     *
+     * @param amount
      */
     public void addAccount(double amount) {
         accounts.add(new Account(amount));
     }
-    
+
     /**
      * poskytne informaci o celkove sume penez na vsech uctech
-     * @return 
+     *
+     * @return
      */
-    public double showSumAccountBalance(){
+    public double showSumAccountBalance() {
         double sum = 0;
-       for(Account account : accounts){
+        for (Account account : accounts) {
             sum += account.getAccountBalance();
         }
-       return sum;
+        return sum;
     }
-    
+
     public abstract String displayNameOfClient();
 
     @Override
     public String toString() {
         return "Client{" + "name=" + name + ", accounts=" + accounts + '}';
     }
-    
-    
-    
-    
+
 }

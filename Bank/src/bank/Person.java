@@ -62,18 +62,4 @@ public class Person extends Client {
         return lastLetters;
     }
 
-//    public static void main(String[] args) {
-////        System.out.println(getLastLetters("wrnatova"));
-////        System.out.println(getLastLetters("karel"));
-////        System.out.println(isFemale("wrnatova"));
-////        System.out.println(isFemale("karel"));
-//Person p1 = new Person("karEl");
-//p1.addAccount(2000);
-//p1.addAccount(300);
-//        System.out.println(p1.getName());
-//        System.out.println(p1.displayNameOfClient());
-////Person p2 = new Person("wrnatovA");
-////        System.out.println(p1.displayNameOfClient());
-////        System.out.println(p2.displayNameOfClient());
-//    }
 }

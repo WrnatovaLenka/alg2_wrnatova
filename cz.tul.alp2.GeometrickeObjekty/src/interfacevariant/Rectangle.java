@@ -1,4 +1,6 @@
-package cz.tul.alp2.shapes;
+package interfacevariant;
+
+
 
 /**
  *
@@ -6,7 +8,7 @@ package cz.tul.alp2.shapes;
  */
 
 //nemenny immutable objekt
-public class Rectangle extends Shape implements java.lang.Comparable{
+public class Rectangle implements ShapeInterface{
     //data
     private double a;
     private double b;
@@ -43,17 +45,12 @@ public class Rectangle extends Shape implements java.lang.Comparable{
 
     @Override
     public String toString() {
-//        return "Rectangle{" + "a=" + a + ", b=" + b + '}';
-        return super.toString() + String.format(" a = %.2f, b = %.2f", a, b);
+        return "Rectangle{" + "a=" + a + ", b=" + b + '}';
+//        return super.toString() + String.format(" a = %.2f, b = %.2f", a, b);
     }
     
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(2,3);
         System.out.println(r1);
-    }
-
-    @Override
-    public int compareTo(Object o) {
-       return (int) (this.computeArea() - ((Shape)o).computeArea());
     }
 }

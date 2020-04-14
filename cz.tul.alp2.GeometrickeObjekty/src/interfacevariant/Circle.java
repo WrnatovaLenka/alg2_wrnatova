@@ -1,10 +1,12 @@
-package cz.tul.alp2.shapes;
+package interfacevariant;
+
+
 
 /**
  *
  * @author lenka.wrnatova
  */
-public class Circle extends Shape implements java.lang.Comparable{ //Circle je typove kompatibilni s Shape, Cirlr IS a Shape
+public class Circle implements ShapeInterface{ //Circle je typove kompatibilni s ShapeInterface
     //data
     private double r;
 
@@ -33,8 +35,8 @@ public class Circle extends Shape implements java.lang.Comparable{ //Circle je t
 
     @Override
     public String toString() {
-//        return "Circle{" + "r=" + r + '}';
-        return super.toString() + String.format(" r = %.2f", r);
+        return "Circle{" + "r=" + r + '}';
+//        return super.toString() + String.format(" r = %.2f", r);
     }
     
     //obsah
@@ -46,14 +48,7 @@ public class Circle extends Shape implements java.lang.Comparable{ //Circle je t
     public static void main(String[] args) {
         Circle c1 = Circle.getInstanceR(4);
         System.out.println(c1);
-//        System.out.println(c1.computeArea());
-        System.out.println(c1.name);
-        System.out.println(c1.getShapeName());
-    }
-
-    @Override
-    public int compareTo(Object o) {
-       return (int) (this.computeArea() - ((Shape)o).computeArea());
+        System.out.println(c1.computeArea());
     }
     
     

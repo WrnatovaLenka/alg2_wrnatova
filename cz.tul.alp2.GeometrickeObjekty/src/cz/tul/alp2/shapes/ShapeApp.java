@@ -1,6 +1,7 @@
 package cz.tul.alp2.shapes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -44,6 +45,9 @@ static ArrayList<Shape> shapes = new ArrayList();
             case 7 :    
                 findWithMaxArea();
                 break;
+            case 8 :
+                sortByArea();
+                break;
         }
         
         }while (choice != 0);
@@ -58,6 +62,7 @@ static ArrayList<Shape> shapes = new ArrayList();
         System.out.println("5. vypis geometricke objekty");
         System.out.println("6. vypocti celkovou plochu");
         System.out.println("7. vypis objekt s nejvetsi plochou");
+        System.out.println("8. seradi objekty podle plochy");
         System.out.println("0. konec programu");
         
     }
@@ -121,5 +126,12 @@ static ArrayList<Shape> shapes = new ArrayList();
          System.out.println("Nejvetsi plochu ma "+maxShape+ ", jeho plocha je "+maxShape.computeArea());
          
      }
+
+    private static void sortByArea() {
+        //zobrazit objekty setridene podle plochy
+        Collections.sort(shapes);
+        printObjects();
+        //shapes typove kompatibilni s komparable (obsahuji compare to)
+    }
      
 }

@@ -13,12 +13,12 @@ public class Student implements CompareInterface, Comparable {
     private String firstName;
     private String lastName;
     private int studentNumber;
-    private ArrayList<Integer> grades;
+    private ArrayList<Integer> gardes;
     private double averageGrade;
 
     //konstruktor
     public Student(String firstName, String lastName, int studentNumber) {
-        this.grades = new ArrayList(0);
+        this.gardes = new ArrayList(0);
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
@@ -26,7 +26,7 @@ public class Student implements CompareInterface, Comparable {
     }
     
     public Student(String firstName, String lastName, int studentNumber, ArrayList grades) {
-        this.grades = grades;
+        this.gardes = grades;
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
@@ -34,9 +34,9 @@ public class Student implements CompareInterface, Comparable {
     }
     
     public Student(String firstName, String lastName, int studentNumber, int[] newGrades) {
-        this.grades = new ArrayList(newGrades.length);
+        this.gardes = new ArrayList(newGrades.length);
         for (int i = 0; i < newGrades.length; i++) {
-            grades.add(i, newGrades[i]);
+            gardes.add(i, newGrades[i]);
         }
         this.firstName = firstName;
         this.lastName = lastName;
@@ -99,29 +99,29 @@ public class Student implements CompareInterface, Comparable {
     private void countAverage(){
         double sumGrade = 0;
         double averageGrade;
-        for (int grade : this.grades) {
+        for (int grade : this.gardes) {
             sumGrade += grade;
         }
-        this.averageGrade = sumGrade/grades.size();
+        this.averageGrade = sumGrade/gardes.size();
     }
     
     private void addGrade(int grade){
-        this.grades.add(grade);
+        this.gardes.add(grade);
         countAverage();
     }
     
     private void changeGrade(int grade, int position){
-        this.grades.add(position, grade);
+        this.gardes.add(position, grade);
         countAverage();
     }
     
     private String printGrades(){
         String gradesString = "[";
-        for (int i = 0; i < this.grades.size()-1; i++) {
-            gradesString += grades.get(i);
+        for (int i = 0; i < this.gardes.size()-1; i++) {
+            gradesString += gardes.get(i);
             gradesString += ", ";
         }
-        gradesString += grades.get(grades.size()-1);
+        gradesString += gardes.get(gardes.size()-1);
         gradesString += "]";
 //        for (Integer grade : this.grades) {
 //            gradesString += grade;

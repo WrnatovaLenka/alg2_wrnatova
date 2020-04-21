@@ -169,7 +169,7 @@ public class Callendar {
 printCallendar(8, 1995);
 printCallendar(4, 2020);
 printCallendar(12, 2020);
-
+//System.out.println(determineTheDayOfTheWeek(11, 6, 1972));
     }
 
 }

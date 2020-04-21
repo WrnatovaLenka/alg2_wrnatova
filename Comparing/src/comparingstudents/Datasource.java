@@ -9,10 +9,13 @@ import java.util.List;
  * @author lenka.wrnatova
  */
 public class Datasource {
+    static int[] znamkyAlice = {1, 1, 2, 1, 1};
+    static int[] znamkyBob = {5, 4, 4};
+    static int[] znamkyCyril = {2, 3, 2, 1, 1};
     private static Student[] data = {
-      new Student("Alice","Mala",345),
-      new Student("Bob","Velky",123),
-      new Student("Cyril","Stredny",567)
+      new Student("Alice","Mala",345, znamkyAlice),
+      new Student("Bob","Velky",123, znamkyBob),
+      new Student("Cyril","Stredny",567, znamkyCyril)
     };
     
     public static Student[] loadDataAsArray(){

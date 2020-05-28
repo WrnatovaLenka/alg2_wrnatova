@@ -12,6 +12,12 @@ import java.util.List;
  */
 public class BinaryWriter extends Writer {
     
+    /**
+     * Metoda ulozi seznam zamestnancu a jejich vyplat do binarniho souboru
+     * @param employeesFilepath nazev vystupniho souboru
+     * @param employees seznam zamestnancu
+     * @throws IOException 
+     */
     @Override
     public void saveResults(String employeesFilepath, List<Employee> employees) throws IOException {
         try(DataOutputStream dos = new DataOutputStream(new FileOutputStream("data" + File.separator + employeesFilepath))){

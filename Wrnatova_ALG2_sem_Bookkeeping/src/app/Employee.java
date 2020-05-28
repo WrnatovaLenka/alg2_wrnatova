@@ -1,16 +1,22 @@
 package app;
 
 /**
- *
+ *Trida reprezentujici zamestnance firmy.
  * @author lenka.wrnatova
  */
-public class Employee {
+public class Employee{
     private String firstname;
     private String surname;
     private String position;
     private double hoursWorked = 0;
     private double salary;
 
+    public Employee(String firstname, String surname, String position) {
+        this.firstname = firstname;
+        this.surname = surname;
+        this.position = position;
+    }
+    
     public String getFirstname() {
         return firstname;
     }
@@ -31,28 +37,12 @@ public class Employee {
         return salary;
     }
 
-   
-    
-    
-
-    public Employee(String firstname, String surname, String position) {
-        this.firstname = firstname;
-        this.surname = surname;
-        this.position = position;
-    }
-
     public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
-    
-
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    
-    
-    
-    
-    
+
 }

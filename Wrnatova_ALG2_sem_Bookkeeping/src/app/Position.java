@@ -1,7 +1,7 @@
 package app;
 
 /**
- *
+ *Trida predstavuje pozive, ktere je ve firme mozno zastavat s jejich platovym ohodnocenim
  * @author lenka.wrnatova
  */
 public class Position {

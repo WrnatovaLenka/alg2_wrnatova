@@ -13,6 +13,12 @@ import java.util.List;
  */
 public class TextWriter extends Writer{
     
+    /**
+     * Metoda ulozi seznam zamestnancu a jejich vyplat do textoveho souboru
+     * @param employeesFilepath nazev vystupniho souboru
+     * @param employees seznam zamestnancu
+     * @throws IOException 
+     */
     @Override
     public void saveResults(String employeesFilepath, List<Employee> employees) throws IOException{
         File resultFile = new File(System.getProperty("user.dir") + File.separator + "data" + File.separator + employeesFilepath);

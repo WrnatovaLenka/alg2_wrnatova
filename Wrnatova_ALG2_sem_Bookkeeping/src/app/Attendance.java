@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- *
+ *Trida predstavuje dochazku zamestnancu
  * @author lenka.wrnatova
  */
 public class Attendance {
@@ -15,6 +15,18 @@ public class Attendance {
     private LocalTime leave;
     public static DateTimeFormatter dtfattendance = DateTimeFormatter.ofPattern("HH:mm:ss");
 
+    public Attendance(String firstname, String surname, LocalTime arrival, LocalTime leave) {
+        this.firstname = firstname;
+        this.surname = surname;
+        this.arrival = arrival;
+        this.leave = leave;
+    }
+
+    public Attendance(String firstname, String surname) {
+        this.firstname = firstname;
+        this.surname = surname;
+    }
+    
     public String getFirstname() {
         return firstname;
     }
@@ -31,20 +43,6 @@ public class Attendance {
         return leave;
     }
 
-    
-    
-    public Attendance(String firstname, String surname, LocalTime arrival, LocalTime leave) {
-        this.firstname = firstname;
-        this.surname = surname;
-        this.arrival = arrival;
-        this.leave = leave;
-    }
-
-    public Attendance(String firstname, String surname) {
-        this.firstname = firstname;
-        this.surname = surname;
-    }
-    
     void setArrival(String arrival) {
         this.arrival = LocalTime.parse(arrival);
     }

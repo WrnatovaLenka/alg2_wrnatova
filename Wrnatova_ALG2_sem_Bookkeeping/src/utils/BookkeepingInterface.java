@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
+ *Interface pro bookkeeping
  * @author lenka.wrnatova
  */
 public interface BookkeepingInterface {
@@ -15,7 +15,7 @@ public interface BookkeepingInterface {
 
     public void saveSalaries(String salariesFile) throws IOException;
 
-    public void sendMail(String recipient) throws Exception;
+    public void sendMail(String recipient, String messageText) throws Exception;
 
     public void clearData();
 

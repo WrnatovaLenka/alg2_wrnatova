@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 /**
- *
+ *Zapisovani do textovych souboru
  * @author lenka.wrnatova
  */
 public class TextWriter extends Writer{

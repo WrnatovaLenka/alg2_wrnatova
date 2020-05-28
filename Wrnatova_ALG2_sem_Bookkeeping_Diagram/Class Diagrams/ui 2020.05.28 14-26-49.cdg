@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ui">
+  <ClassDiagramComponents>
+    <Class name="Main" package="ui" visibility="public" xPosition="218.0" yPosition="113.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="printMenu" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="loadEmployeesFromFiles" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BookkeepingInterface" name="bki"/>
+        </Method>
+        <Method name="outputFile" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BookkeepingInterface" name="bki"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
+ *Zapisovani do souboru
  * @author lenka.wrnatova
  */
 public abstract class Writer {

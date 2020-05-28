@@ -3,7 +3,7 @@ package app;
 import utils.ComparatorInterface;
 
 /**
- *
+ *Porovnavani zamestnancu podle odpracovanych hodin
  * @author lenka.wrnatova
  */
 public class CompareEmployeeByHoursWorked  implements ComparatorInterface{

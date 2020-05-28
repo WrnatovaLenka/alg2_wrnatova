@@ -1,3 +1,7 @@
 prodavac 100
 udrzbar 85
 manazer 250
+ridic 120
+ucetni 135
+skladnik 95
+spisovatel 350

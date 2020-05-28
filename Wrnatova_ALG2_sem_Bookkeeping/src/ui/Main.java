@@ -8,6 +8,7 @@ import java.util.Scanner;
 import utils.BookkeepingInterface;
 
 /**
+ * Trida pro komunikaci s uzivatelem
  *
  * @author lenka.wrnatova
  */
@@ -21,10 +22,12 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BookkeepingInterface bki = new Bookkeeping();
 
+        //String next;
         int volba;
         printMenu();
+        volba = checkImput();
 
-        while ((volba = sc.nextInt()) != 0) {
+        while (volba != 0) {
 
             switch (volba) {
                 case 1:
@@ -41,6 +44,7 @@ public class Main {
                     }
                     bki.clearData();
                     printMenu();
+                    volba = checkImput();
                     break;
 
                 case 2:
@@ -54,7 +58,7 @@ public class Main {
                         System.out.println("Zadejte příjemce emailu");
                         //lennyw.school@gmail.com
                         String recipient = sc.next();
-                        bki.sendMail(recipient);
+                        bki.sendMail(recipient, bki.getSalaries());
                     } catch (IOException e) {
                         System.out.println("Chyba pri cteni a zapisu");
                     } catch (NoSuchElementException e) {
@@ -63,6 +67,7 @@ public class Main {
 
                     bki.clearData();
                     printMenu();
+                    volba = checkImput();
                     break;
 
                 case 3:
@@ -79,6 +84,7 @@ public class Main {
 
                     System.out.println(bki.employeeOfTheMonth());
                     printMenu();
+                    volba = checkImput();
                     bki.clearData();
                     break;
 
@@ -134,6 +140,20 @@ public class Main {
         String salariesFile = sc.next();
         bki.saveSalaries(salariesFile);
         System.out.println("Výplaty byly zapsány do souboru " + salariesFile);
+    }
+    
+    /**
+     * Zkontroluje, zda uživatel v menu zadává správné číslo
+     * @return číslo volby z menu
+     */
+    public static int checkImput(){
+        String next;
+    while (!(next = sc.next()).matches("[0-3]")) {
+            sc.nextLine();
+            System.out.printf("\"%s\" není platna volba.\n", next);
+            System.out.println("Zadejte hodnotu 1, 2, 3 nebo 0.");
+        }
+        return Integer.parseInt(next);
     }
 
 }

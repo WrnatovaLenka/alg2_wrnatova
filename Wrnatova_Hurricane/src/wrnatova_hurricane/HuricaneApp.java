@@ -14,14 +14,14 @@ import java.util.Scanner;
  *
  * @author lenka.wrnatova
  */
-public class DataEditor implements HurricaneInterface{
+public class HuricaneApp implements HurricaneInterface{
+   ArrayList<Hurricane> hurricanes = new ArrayList<>(); 
     
     
-    ArrayList<Hurricane> hurricane = new ArrayList<>();
     @Override
     public void load()throws FileNotFoundException, IOException{
-        File hData = new File("hurricanedata.txt");
-        Scanner load = new Scanner(hData);
+        File hurricaneFile = new File("hurricanedata.txt");
+        Scanner load = new Scanner(hurricaneFile);
         while(load.hasNext()){
             int year = load.nextInt();
             String month = load.next();
@@ -29,16 +29,26 @@ public class DataEditor implements HurricaneInterface{
             int speed = load.nextInt();
             String name = load.next();
             Hurricane h = new Hurricane(year, month, pressure, speed, name); 
-            hurricane.add(h);
+            hurricanes.add(h);
         }   
     } 
     
     @Override
-    public String hurricanesInYears(int y1, int y2){
+    public String hurricaneByName(String name){
+       for (Hurricane hurricane: hurricanes) {
+           if(hurricane.getName().equals(name)){
+               return "Kategorie: Category " + hurricane.getHurricaneCategory() + ", rychlost: " + hurricane.getSpeedInKmH() + " km/h";
+           }
+       }
+       return "Hurikan " + name + " nenalezen";
+    }
+    
+    @Override
+    public String hurricanesFromTo(int from, int to){
         StringBuilder sb = new StringBuilder("");
-        for (Hurricane h: hurricane) {
-            if(h.getYear() >= y1 && h.getYear() <= y2){
-                sb.append(h);
+        for (Hurricane hurricane: hurricanes) {
+            if(hurricane.getYear() >= from && hurricane.getYear() <= to){
+                sb.append(hurricane);
                 sb.append("\n");
             }
         }
@@ -46,22 +56,13 @@ public class DataEditor implements HurricaneInterface{
         
     }
     
-    @Override
-    public String hurricaneByName(String name){
-       for (Hurricane h: hurricane) {
-           if(h.getName().equals(name)){
-               return "category: "+h.getHurricaneCategory() + " speed: " + h.getSpeedInKmH() + "km/h";
-           }
-       }
-       return "Hurricane does not found";
-    }
     
     @Override
     public String hurricaneInfoBySpeed(){      
-        Collections.sort(hurricane, Comparator.comparing(Hurricane::getSpeedInKmH));
+        Collections.sort(hurricanes, Comparator.comparing(Hurricane::getSpeedInKmH));
         StringBuilder sb = new StringBuilder();
-        for (Hurricane h: hurricane) {
-            sb.append(h.toString());
+        for (Hurricane hurricane: hurricanes) {
+            sb.append(hurricane.toString());
             sb.append("\n");
         }
         return sb.toString();       

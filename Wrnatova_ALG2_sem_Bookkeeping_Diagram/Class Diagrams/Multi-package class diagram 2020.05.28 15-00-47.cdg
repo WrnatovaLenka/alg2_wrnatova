@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-package class diagram">
+  <ClassDiagramComponents>
+    <Class name="Attendance" package="app" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="firstname" type="String" visibility="private"/>
+        <Field name="surname" type="String" visibility="private"/>
+        <Field name="arrival" type="LocalTime" visibility="private"/>
+        <Field name="leave" type="LocalTime" visibility="private"/>
+        <Field name="dtfattendance" type="DateTimeFormatter" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstname"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="LocalTime" name="arrival"/>
+          <Argument type="LocalTime" name="leave"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstname"/>
+          <Argument type="String" name="surname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstname" returnType="String" visibility="public"/>
+        <Method name="getSurname" returnType="String" visibility="public"/>
+        <Method name="getArrival" returnType="LocalTime" visibility="public"/>
+        <Method name="getLeave" returnType="LocalTime" visibility="public"/>
+        <Method name="setArrival" returnType="void" visibility="package">
+          <Argument type="String" name="arrival"/>
+        </Method>
+        <Method name="setLeave" returnType="void" visibility="package">
+          <Argument type="String" name="leave"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BinaryWriter" package="app" visibility="public" xPosition="1186.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="saveResults" returnType="void" visibility="public">
+          <Argument type="String" name="employeesFilepath"/>
+          <Argument type="List&lt;Employee&gt;" name="employees"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Bookkeeping" package="app" visibility="public" xPosition="443.0" yPosition="389.0">
+      <Fields>
+        <Field name="employees" type="ArrayList&lt;Employee&gt;" visibility="private"/>
+        <Field name="positions" type="ArrayList&lt;Position&gt;" visibility="private"/>
+        <Field name="attendance" type="ArrayList&lt;Attendance&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="loadEmployees" returnType="void" visibility="public">
+          <Argument type="String" name="employeesFilepath"/>
+        </Method>
+        <Method name="loadPositions" returnType="void" visibility="public">
+          <Argument type="String" name="positionFilepath"/>
+        </Method>
+        <Method name="loadAttendance" returnType="void" visibility="public">
+          <Argument type="String" name="attendanceFilepath"/>
+        </Method>
+        <Method name="load" returnType="void" visibility="public">
+          <Argument type="String" name="employeesFilepath"/>
+          <Argument type="String" name="positionFilepath"/>
+          <Argument type="String" name="attendanceFilepath"/>
+        </Method>
+        <Method name="findEmployeesAttendance" returnType="ArrayList" visibility="private">
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="findPosition" returnType="Position" visibility="private">
+          <Argument type="String" name="position"/>
+        </Method>
+        <Method name="setHoursWorkedToEmployees" returnType="void" visibility="public"/>
+        <Method name="setSalariesToEmployees" returnType="void" visibility="public"/>
+        <Method name="getSalaries" returnType="String" visibility="public"/>
+        <Method name="getHoursWorked" returnType="String" visibility="public"/>
+        <Method name="sort" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList" name="arrayList"/>
+          <Argument type="ComparatorInterface" name="o"/>
+        </Method>
+        <Method name="employeeOfTheMonth" returnType="String" visibility="public"/>
+        <Method name="saveSalaries" returnType="void" visibility="public">
+          <Argument type="String" name="salariesFilepath"/>
+        </Method>
+        <Method name="sendMail" returnType="void" visibility="public">
+          <Argument type="String" name="recepient"/>
+        </Method>
+        <Method name="prepareMessage" returnType="Message" visibility="private" isStatic="true">
+          <Argument type="Session" name="session"/>
+          <Argument type="String" name="myAccountEmail"/>
+          <Argument type="String" name="recipient"/>
+        </Method>
+        <Method name="clearData" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CompareEmployeeByHoursWorked" package="app" visibility="public" xPosition="997.0" yPosition="807.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="bigger" returnType="boolean" visibility="public">
+          <Argument type="Object" name="o1"/>
+          <Argument type="Object" name="o2"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Employee" package="app" visibility="public" xPosition="531.0" yPosition="20.0">
+      <Fields>
+        <Field name="firstname" type="String" visibility="private"/>
+        <Field name="surname" type="String" visibility="private"/>
+        <Field name="position" type="String" visibility="private"/>
+        <Field name="hoursWorked" type="double" visibility="private"/>
+        <Field name="salary" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstname"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="position"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstname" returnType="String" visibility="public"/>
+        <Method name="getSurname" returnType="String" visibility="public"/>
+        <Method name="getPosition" returnType="String" visibility="public"/>
+        <Method name="getHoursWorked" returnType="double" visibility="public"/>
+        <Method name="getSalary" returnType="double" visibility="public"/>
+        <Method name="setHoursWorked" returnType="void" visibility="public">
+          <Argument type="double" name="hoursWorked"/>
+        </Method>
+        <Method name="setSalary" returnType="void" visibility="public">
+          <Argument type="double" name="salary"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Position" package="app" visibility="public" xPosition="1072.0" yPosition="599.0">
+      <Fields>
+        <Field name="position" type="String" visibility="private"/>
+        <Field name="hourRate" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="position"/>
+          <Argument type="int" name="hourRate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPosition" returnType="String" visibility="public"/>
+        <Method name="getHourRate" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TextWriter" package="app" visibility="public" xPosition="929.0" yPosition="149.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="saveResults" returnType="void" visibility="public">
+          <Argument type="String" name="employeesFilepath"/>
+          <Argument type="List&lt;Employee&gt;" name="employees"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Writer" package="app" visibility="public" isAbstract="true" xPosition="1008.0" yPosition="404.0">
+      <Fields>
+        <Field name="dataDirectory" type="File" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="saveResults" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="String" name="employeesFilepath"/>
+          <Argument type="List&lt;Employee&gt;" name="employees"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="ui" visibility="public" xPosition="20.0" yPosition="369.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="printMenu" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="loadEmployeesFromFiles" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BookkeepingInterface" name="bki"/>
+        </Method>
+        <Method name="outputFile" returnType="void" visibility="public" isStatic="true">
+          <Argument type="BookkeepingInterface" name="bki"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="BookkeepingInterface" package="utils" visibility="public" xPosition="20.0" yPosition="599.0">
+      <Methods>
+        <Method name="load" returnType="void" visibility="public">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="filePath2"/>
+          <Argument type="String" name="filePath3"/>
+        </Method>
+        <Method name="getSalaries" returnType="String" visibility="public"/>
+        <Method name="saveSalaries" returnType="void" visibility="public">
+          <Argument type="String" name="salariesFile"/>
+        </Method>
+        <Method name="sendMail" returnType="void" visibility="public">
+          <Argument type="String" name="recipient"/>
+        </Method>
+        <Method name="clearData" returnType="void" visibility="public"/>
+        <Method name="employeeOfTheMonth" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="ComparatorInterface" package="utils" visibility="public" xPosition="186.0" yPosition="813.0">
+      <Methods>
+        <Method name="bigger" returnType="boolean" visibility="package">
+          <Argument type="Object" name="o1"/>
+          <Argument type="Object" name="o2"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="positions" source="app.Bookkeeping" target="app.Position" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Position&gt;"/>
+    <HasRelation name="employees" source="app.Bookkeeping" target="app.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Employee&gt;"/>
+    <UseRelation source="app.Bookkeeping" target="utils.ComparatorInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="app.Bookkeeping" target="app.Position" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="app.Bookkeeping" target="utils.BookkeepingInterface"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="app.CompareEmployeeByHoursWorked" target="utils.ComparatorInterface"/>
+    <UseRelation source="app.Writer" target="app.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="app.TextWriter" target="app.Writer"/>
+    <IsRelation name="is" source="app.BinaryWriter" target="app.Writer"/>
+    <UseRelation source="ui.Main" target="utils.BookkeepingInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="attendance" source="app.Bookkeeping" target="app.Attendance" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Attendance&gt;"/>
+    <UseRelation source="app.BinaryWriter" target="app.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="app.TextWriter" target="app.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

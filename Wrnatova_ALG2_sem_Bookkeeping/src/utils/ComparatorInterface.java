@@ -1,7 +1,7 @@
 package utils;
 
 /**
- *
+ *Interface pro porovnavani dvou obektu
  * @author lenka.wrnatova
  */
 public interface ComparatorInterface {

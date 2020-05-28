@@ -200,7 +200,7 @@ public class Bookkeeping implements BookkeepingInterface {
         StringBuilder sb = new StringBuilder("");
 
         for (Employee employee : employees) {
-            sb.append(String.format("%10s %10s %.2f%3s%n", employee.getFirstname(), employee.getSurname(), employee.getSalary(), " Kč"));
+            sb.append(String.format("%13s %13s %.2f%3s%n", employee.getFirstname(), employee.getSurname(), employee.getSalary(), " Kč"));
 
         }
         return sb.toString();
@@ -214,7 +214,7 @@ public class Bookkeeping implements BookkeepingInterface {
         StringBuilder sb = new StringBuilder("");
 
         for (Employee employee : employees) {
-            sb.append(String.format("%10s %10s %.2f%6s%n", employee.getFirstname(), employee.getSurname(), employee.getHoursWorked(), " hodin"));
+            sb.append(String.format("%13s %13s %.2f%6s%n", employee.getFirstname(), employee.getSurname(), employee.getHoursWorked(), " hodin"));
 
         }
         return sb.toString();
@@ -279,7 +279,7 @@ public class Bookkeeping implements BookkeepingInterface {
      * @param recepient
      * @throws Exception 
      */
-    public void sendMail(String recepient) throws Exception {
+    public void sendMail(String recepient, String messageText) throws Exception {
         System.out.println("Preparing to send email");
         Properties properties = new Properties();
 
@@ -291,7 +291,7 @@ public class Bookkeeping implements BookkeepingInterface {
 
         String myAccountEmail = "lennyw.school@gmail.com";
         //pri prezentaci zmen heslo
-        String password = "*****";
+        String password = "12Password34";
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
@@ -300,7 +300,7 @@ public class Bookkeeping implements BookkeepingInterface {
             }
         });
 
-        Message message = prepareMessage(session, myAccountEmail, recepient);
+        Message message = prepareMessage(session, myAccountEmail, recepient, messageText);
 
         Transport.send(message);
         System.out.println("Message sent succesfully");
@@ -313,13 +313,13 @@ public class Bookkeeping implements BookkeepingInterface {
      * @param recipient projemce emailu
      * @return vraci zpravu
      */
-    private static Message prepareMessage(Session session, String myAccountEmail, String recipient) {
+    private static Message prepareMessage(Session session, String myAccountEmail, String recipient, String messageText) {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            message.setSubject("my first email");
-            message.setText("hi there, \n look my email!");
+            message.setSubject("salaries");
+            message.setText(messageText);
             return message;
         } catch (Exception ex) {
             Logger.getLogger(Bookkeeping.class.getName()).log(Level.SEVERE, null, ex);

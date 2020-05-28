@@ -3,3 +3,19 @@ Výplaty:
       Anna     Kratka 1850,00 Kč
       Petr       Maly 1750,00 Kč
   Katerina     Velika 6750,00 Kč
+     Lucie     Dlouha 660,00 Kč
+     Josef      Mlady 742,50 Kč
+ Frantisek      Stary 660,00 Kč
+  Karolina     Svetla 742,50 Kč
+      Ivan     Jirous 900,00 Kč
+    Fjodor Dostojevskij 3960,00 Kč
+     Karel      Capek 172,03 Kč
+     Pavel      Kolar 3150,00 Kč
+     Alena   Antalova 638,69 Kč
+     Petra       Janu 3150,00 Kč
+    Jirina  Bohdalova 3717,10 Kč
+      Jiri       Miru 163,43 Kč
+  Miroslav    Chrabry 780,00 Kč
+      Jana  Obloukova 818,93 Kč
+    Ingrit      Blaho 617,50 Kč
+   Richard    Krupavy 780,00 Kč

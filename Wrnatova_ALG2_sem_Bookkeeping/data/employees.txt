@@ -2,4 +2,20 @@ Karel Novak        udrzbar
 Anna Kratka        prodavac
 Petr Maly          prodavac
 Katerina Velika    manazer
+Lucie Dlouha   ridic
+Josef Mlady   ucetni
+Frantisek Stary   ridic
+Karolina Svetla   ucetni
+Ivan Jirous  prodavac
+Fjodor Dostojevskij  ridic
+Karel Capek  prodavac
+Pavel Kolar  spisovatel
+Alena Antalova  prodavac
+Petra Janu   spisovatel
+Jirina Bohdalova   spisovatel
+Jiri Miru   skladnik
+Miroslav Chrabry  ridic
+Jana Obloukova   skladnik
+Ingrit Blaho   skladnik
+Richard Krupavy   ridic
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="utils">
+  <ClassDiagramComponents>
+    <Interface name="BookkeepingInterface" package="utils" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="load" returnType="void" visibility="public">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="filePath2"/>
+          <Argument type="String" name="filePath3"/>
+        </Method>
+        <Method name="getSalaries" returnType="String" visibility="public"/>
+        <Method name="saveSalaries" returnType="void" visibility="public">
+          <Argument type="String" name="salariesFile"/>
+        </Method>
+        <Method name="sendMail" returnType="void" visibility="public">
+          <Argument type="String" name="recipient"/>
+        </Method>
+        <Method name="clearData" returnType="void" visibility="public"/>
+        <Method name="employeeOfTheMonth" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="ComparatorInterface" package="utils" visibility="public" xPosition="411.0" yPosition="20.0">
+      <Methods>
+        <Method name="bigger" returnType="boolean" visibility="package">
+          <Argument type="Object" name="o1"/>
+          <Argument type="Object" name="o2"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

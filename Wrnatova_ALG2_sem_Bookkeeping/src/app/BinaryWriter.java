@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
+ *Zapisovani do binarnich souboru
  * @author lenka.wrnatova
  */
 public class BinaryWriter extends Writer {

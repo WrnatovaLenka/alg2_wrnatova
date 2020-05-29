@@ -10,10 +10,10 @@ public class Cd extends Command{
     
     @Override
     public String execute(File actualDir) {
-        File directory = new File(params[1]).getAbsoluteFile();
+        File directory = new File (params[1]).getAbsoluteFile();
         if(!params[1].equals("..") && directory.exists()){            
             CmdEditor.changeActualDir(directory);
-            System.out.println("Prvni");
+//            System.out.println("Prvni");
             return "Directory changed";
             
         }
@@ -33,5 +33,6 @@ public class Cd extends Command{
             
         
     }
+    
     
 }

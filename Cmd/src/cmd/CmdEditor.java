@@ -35,7 +35,7 @@ public class CmdEditor implements CmdInterface {
         //parse
         command = Parser.parse(line);
         //execute
-        isRunning = false;
+//        isRunning = false;
         return command.execute(actualDir);
     }
     

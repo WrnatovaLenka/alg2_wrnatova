@@ -19,7 +19,6 @@ public class Dir extends Command{
             files = actualDir.listFiles();
             return dirToString(files);
         }else if (params.length == 2  &&  params[1].equals("-o")) {
-            System.out.println("podminka");
             files = actualDir.listFiles();
             Arrays.sort(files,Comparator.comparingLong(File::lastModified));
             

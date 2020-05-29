@@ -40,8 +40,7 @@ public class Recdir extends Command {
                 for(int i = 0; i<=in; i++){
                 sb.append("-");
                 }
-                sb.append(String.format("%-20s%6d", file.getName(), file.length()));
-                sb.append(new Date(file.lastModified())).append("\n");
+                sb.append(String.format("%-30s%n", file.getName()));
             }
         }
         return sb.toString();

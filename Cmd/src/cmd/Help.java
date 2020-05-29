@@ -19,7 +19,8 @@ public class Help extends Command{
                                + String.format("%-30s %s\n", "cd ..", "Change directory - move to the folder one level higher")
                                + String.format("%-30s %s\n", "mkdir [folder name]", "Create new folders")
                                + String.format("%-30s %s\n", "rename [nameFrom] [nameTo]", "Rename folder or file")
-                               + String.format("%-30s %s\n", "exit", "Finish program cmd");
+                               + String.format("%-30s %s\n", "exit", "Finish program cmd")
+                               + String.format("%-30s %s\n", "recdir", "Dir recursive");
         return help;
     }
     

@@ -291,7 +291,7 @@ public class Bookkeeping implements BookkeepingInterface {
 
         String myAccountEmail = "lennyw.school@gmail.com";
         //pri prezentaci zmen heslo
-        String password = "12Password34";
+        String password = "******";
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
